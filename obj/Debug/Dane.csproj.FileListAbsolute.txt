@@ -1,0 +1,10 @@
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\bin\Debug\Dane.exe.config
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\bin\Debug\Dane.exe
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\bin\Debug\Dane.pdb
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.csprojAssemblyReference.cache
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.Properties.Resources.resources
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.csproj.GenerateResource.cache
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.csproj.CoreCompileInputs.cache
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.exe
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.pdb
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.Form1.resources

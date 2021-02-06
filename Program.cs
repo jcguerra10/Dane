@@ -16,7 +16,7 @@ namespace Dane
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new lbl());
+            Application.Run(new Form1());
         }
     }
 }
