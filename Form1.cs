@@ -63,6 +63,8 @@ namespace Dane
         {
             string s = comboBox1.Text;
 
+            dataGridView1.Rows.Clear();
+
             string[] lines = File.ReadAllLines("D:/AUU/ProyectoIntegrador/Tarea Feb-8/Dane/Dane/Data/file.csv");
 
             foreach (var i in lines)
