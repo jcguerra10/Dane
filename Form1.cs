@@ -16,11 +16,10 @@ namespace Dane
     public partial class Form1 : Form
     {
         // Need to change the path according to where the file is located Data/file.csv
-        const string path = "D:/AUU/ProyectoIntegrador/Tarea Feb-8/Dane/Dane/Data/file.csv";
+        string path = "";
         public Form1()
         {
-            InitializeComponent();
-            Config();
+            InitializeComponent();            
         }
 
         public void Config()
@@ -75,47 +74,59 @@ namespace Dane
 
         private void chart1_Click(object sender, EventArgs e)
         {
-            string[] lines = File.ReadAllLines(path);           
-            String[] series = { "Municipio", "Isla", "Area no Municipal" };
-            int i1 = 0;
-            int i2 = 0;
-            int i3 = 0;
-
-            chart1.Titles.Clear();
-            chart1.Series.Clear();
-
-            foreach (var i in lines)
+            if (path != "")
             {
+                string[] lines = File.ReadAllLines(path);
+                String[] series = { "Municipio", "Isla", "Area no Municipal" };
+                int i1 = 0;
+                int i2 = 0;
+                int i3 = 0;
 
-                var valores = i.Split(',');
-                if (valores[4] == "Municipio")
+                chart1.Titles.Clear();
+                chart1.Series.Clear();
+
+                foreach (var i in lines)
                 {
 
-                    i1 = i1 + 1;
+                    var valores = i.Split(',');
+                    if (valores[4] == "Municipio")
+                    {
+
+                        i1 = i1 + 1;
+                    }
+                    else if (valores[4] == "Isla")
+                    {
+
+                        i2 = i2 + 1;
+                    }
+                    else
+                    {
+
+                        i3 = i3 + 1;
+                    }
                 }
-                else if (valores[4] == "Isla")
+                int[] points = { i1, i2, i3 };
+
+
+
+                chart1.Titles.Add("Departamentos");
+
+                for (int i = 0; i < series.Length; i++)
                 {
 
-                    i2 = i2 + 1;
-                }
-                else
-                {
-
-                    i3 = i3 + 1;
+                    Series serie = chart1.Series.Add(series[i]);
+                    serie.Label = points[i].ToString();
+                    serie.Points.Add(points[i]);
                 }
             }
-            int[] points = { i1, i2, i3 };
+        }
 
-
-
-            chart1.Titles.Add("Departamentos");
-
-            for (int i = 0; i < series.Length; i++)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-
-                Series serie = chart1.Series.Add(series[i]);
-                serie.Label = points[i].ToString();
-                serie.Points.Add(points[i]);
+                path = openFileDialog1.FileName;
+                Config();
             }
         }
     }

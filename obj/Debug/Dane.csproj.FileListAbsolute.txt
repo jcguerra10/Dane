@@ -27,3 +27,4 @@ D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.csproj.GenerateRe
 D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.csproj.CoreCompileInputs.cache
 D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.exe
 D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.pdb
+D:\AUU\ProyectoIntegrador\Tarea Feb-8\Dane\Dane\obj\Debug\Dane.csprojAssemblyReference.cache
