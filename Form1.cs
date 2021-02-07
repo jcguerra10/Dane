@@ -9,23 +9,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Dane
 {
     public partial class Form1 : Form
     {
-               
-        
-
         public Form1()
         {
             InitializeComponent();
             Config();
         }
 
+
+
         public void Config()
         {
-            string[] lines = File.ReadAllLines("D:/AUU/ProyectoIntegrador/Tarea Feb-8/Dane/Dane/Data/file.csv");
+            string[] lines = File.ReadAllLines("C:/Users/Playtech/source/repos/Dane/Data/file.csv");
             ArrayList ar = new ArrayList();
             foreach ( var i in lines)
             {
@@ -52,9 +52,10 @@ namespace Dane
         private void Form1_Load(object sender, EventArgs e)
         {
             
+
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object send er, DataGridViewCellEventArgs e)
         {
 
         }
@@ -65,7 +66,7 @@ namespace Dane
 
             dataGridView1.Rows.Clear();
 
-            string[] lines = File.ReadAllLines("D:/AUU/ProyectoIntegrador/Tarea Feb-8/Dane/Dane/Data/file.csv");
+            string[] lines = File.ReadAllLines("C:/Users/Playtech/source/repos/Dane/Data/file.csv");
 
             foreach (var i in lines)
             {
@@ -81,6 +82,43 @@ namespace Dane
                 }
             }
             
+        }
+
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+
+            string[] lines = File.ReadAllLines("C:/Users/Playtech/source/repos/Dane/Data/file.csv");
+            String datos = "";
+            String[] series = {"Municipio", "Isla", "Area no mu"};
+            int i1 = 0;
+            int i2 = 0;
+            int i3 = 0;
+            foreach (var i in lines)
+            {
+
+                var valores = i.Split(',');
+                if (valores[4] == "Municipio"){
+                    
+                    i1 = i1 + 1;
+                }else if(valores[4] == "Isla"){
+                
+                    i2 = i2 + 1;
+                }else{
+                
+                    i3 = i3 + 1;
+                }
+            }
+            int[] points ={i1,i2,i3};
+
+            chart1.Titles.Add("Departamentos");
+
+            for(int i = 0; i < series.Length; i++){
+                
+                Series serie = chart1.Series.Add(series[i]);
+                serie.Label = points[i].ToString();
+                Object p = serie.Point.Add(points[i]);
+            }
         }
     }
 }
